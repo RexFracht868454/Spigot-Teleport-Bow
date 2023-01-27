@@ -13,12 +13,12 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         registerListener();
         recipeManager.loadRecipes();
-        getLogger().info("CustomItems enabled");
+        getLogger().info("TeleportBow enabled");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("CustomItems disabled");
+        getLogger().info("TeleportBow disabled");
     }
 
     private void registerListener() {
