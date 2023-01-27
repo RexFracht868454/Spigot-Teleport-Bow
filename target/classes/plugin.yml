@@ -1,0 +1,4 @@
+name: TeleportBow
+version: '1.0-SNAPSHOT'
+main: rexfracht868454.teleportbow.Main
+api-version: 1.19
