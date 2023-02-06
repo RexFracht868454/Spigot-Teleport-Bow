@@ -2,3 +2,8 @@ name: TeleportBow
 version: '${project.version}'
 main: rexfracht868454.teleportbow.Main
 api-version: 1.19
+config: config.yml
+permissions:
+  "cmd.teleportBow.tp":
+    default: op
+    description: allows a player to get teleported by the bow

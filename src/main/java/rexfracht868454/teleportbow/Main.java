@@ -1,9 +1,9 @@
 package rexfracht868454.teleportbow;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import rexfracht868454.teleportbow.listener.TeleportBow;
 
 public final class Main extends JavaPlugin {
 
@@ -11,9 +11,11 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         registerListener();
         recipeManager.loadRecipes();
         getLogger().info("TeleportBow enabled");
+
     }
 
     @Override
@@ -23,6 +25,11 @@ public final class Main extends JavaPlugin {
 
     private void registerListener() {
         PluginManager pluginManager = Bukkit.getPluginManager();
-        pluginManager.registerEvents(new TeleportBow(), this);
+        pluginManager.registerEvents(new TeleportBowListener(this), this);
+    }
+
+    @Override
+    public FileConfiguration getConfig() {
+        return super.getConfig();
     }
 }
